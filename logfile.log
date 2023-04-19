@@ -1,4 +1,4 @@
-2023-04-19 20:17:39,576 INFO  [Log] verifyHomePageIsVisible() PASSED 
-2023-04-19 20:17:51,764 INFO  [Log] addToCartTest() PASSED 
-2023-04-19 20:17:54,910 INFO  [Log] productQuantityIncrementTest() PASSED 
-2023-04-19 20:17:55,465 INFO  [Log] deleteProductTest() PASSED 
+2023-04-19 21:07:35,341 INFO  [Log] verifyHomePageIsVisible() PASSED 
+2023-04-19 21:07:44,839 INFO  [Log] addToCartTest() PASSED 
+2023-04-19 21:07:47,989 INFO  [Log] productQuantityIncrementTest() PASSED 
+2023-04-19 21:07:48,548 INFO  [Log] deleteProductTest() PASSED 

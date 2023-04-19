@@ -27,20 +27,16 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//*[@id='genderManButton']")
     public WebElement chooseTheGender;
     public void setGender(){
-
-       basePage.waitTheElement(chooseTheGender).click();
+        basePage.waitTheElement(chooseTheGender).click();
     }
 
     @FindBy(xpath = "//*[@class='default-input o-header__search--input']")
     public WebElement searchBox;
     public void passTheProductNameInTheSearchAndCleanTheSearchBox(Cell productName){
         searchBox.sendKeys(productName.toString());
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        searchBox.sendKeys(Keys.BACK_SPACE);
+        searchBox.sendKeys(Keys.CONTROL + "a");
+        basePage.explicitlyWaiting(searchBox);
+        searchBox.sendKeys(Keys.DELETE);
     }
     public void passTheSecondProductInTheSearchBoxAndHitEnter(Cell productName) {
         searchBox.sendKeys(productName.toString(),Keys.ENTER);
