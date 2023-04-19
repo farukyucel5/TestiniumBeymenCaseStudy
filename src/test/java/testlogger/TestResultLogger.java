@@ -25,11 +25,15 @@ public class TestResultLogger implements TestWatcher {
 
     @Override
     public void testDisabled(ExtensionContext context, Optional<String> reason) {
+        System.out.println("TEST DISABLED: " + context.getDisplayName() + " with reason = "
+                + reason.orElse("No reason provided."));
 
     }
 
     @Override
     public void testAborted(ExtensionContext context, Throwable cause) {
+        System.out.println("TEST ABORTED: " + context.getDisplayName() +
+                " with cause = " + cause.getMessage());
 
     }
 }
