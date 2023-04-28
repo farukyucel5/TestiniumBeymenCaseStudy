@@ -42,6 +42,7 @@ public class BeymenAddToCartTest extends BaseTest {
         productDetailPage.clickAddToCartButton();
         productDetailPage.clickOnTheCartIcon();
         cartPage.verificationOfThePrice();
+        //C:\ZLenovo\Asoftware\TestiniumBeymenTestCase
 
     }
     @Test

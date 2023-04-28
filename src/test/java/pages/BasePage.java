@@ -22,10 +22,10 @@ public class BasePage {
     public BasePage(WebDriver driver){
         this.driver = driver ;
     }
-
+    public static String currentDir = System.getProperty("user.dir");
 
     public Cell dataFetching(int row, int column) throws IOException {
-        String dosyaYolu="C:\\ZLenovo\\Asoftware\\TestiniumBeymenTestCase\\src\\test\\java\\DataPackage\\BeymenProducts.xlsx";
+        String dosyaYolu=currentDir+"\\src\\test\\java\\DataPackage\\BeymenProducts.xlsx";
         FileInputStream fis = new FileInputStream(dosyaYolu);
         Workbook workbook= WorkbookFactory.create(fis);
         return workbook.getSheet("Sheet1").getRow(row).getCell(column);
@@ -38,7 +38,7 @@ public class BasePage {
 
     public  void writeFile(String text) {
         try {
-            BufferedWriter writer=new BufferedWriter(new FileWriter("C:\\ZLenovo\\Asoftware\\TestiniumBeymenTestCase\\src\\test\\java\\DataPackage\\product.txt",true));
+            BufferedWriter writer=new BufferedWriter(new FileWriter(currentDir+"\\src\\test\\java\\DataPackage\\product.txt",true));
             writer.newLine();
             writer.write(text);
             writer.close();
@@ -49,7 +49,7 @@ public class BasePage {
     }
 
     public List<String> readFile() {
-        File file1=new File("C:\\ZLenovo\\Asoftware\\TestiniumBeymenTestCase\\src\\test\\java\\DataPackage\\product.txt");
+        File file1=new File(currentDir+"\\src\\test\\java\\DataPackage\\product.txt");
         List<String> lines=new ArrayList<>();
         try {
             Scanner reader=new Scanner(file1);
